@@ -61,13 +61,27 @@ main{
 
 #seccion-agregar{
     background-color: black;
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+#seccion-agregar form{
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-agregar{
+    align-self: center;
 }
 
 #btnSuperheroes{
     background-color: darkred;
+    color: white;
+    width: fit-content;
+}
+
+#btnSuperheroes:hover{
+    background-color: black;
     color: white;
     width: fit-content;
 }
