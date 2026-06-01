@@ -3,12 +3,8 @@
 body{
     min-height: 100vh;
     background: linear-gradient(to bottom, black , darkred);
-    margin: 0;
     color: white;
-    margin: 0;
-    padding: 0;
     font-family: "Science Gothic", sans-serif;
-    font-optical-sizing: auto;
 }
 
 header{
@@ -28,28 +24,50 @@ h1{
 }
 
 h2{
-    color: darkred;
+    color: red;
     font-family: "Bruno Ace SC", sans-serif;
     font-weight: 400;
     font-style: normal;
 }
 
 nav{
-    background-color: rgba(255, 255, 255, 0.194);
+    background-color: white;
     padding: 10px 20px;
     width: auto;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
+}
+.form-control{
+    background-color: rgb(116, 27, 27);
 }
 
 .form-control:focus {
     border-color: black;
     box-shadow: 0 0 5px red;
+    background-color: rgb(116, 27, 27);
+    color: white;
+}
+
+.form-control::placeholder {
+   color: white;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
 #seccion-agregar{
     background-color: black;
     padding: 10px;
     border-radius: 5px;
-    width: 500px;
     text-align: center;
+}
+
+#btnSuperheroes{
+    background-color: darkred;
+    color: white;
+    width: fit-content;
 }
