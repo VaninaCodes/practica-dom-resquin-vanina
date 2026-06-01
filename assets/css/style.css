@@ -65,6 +65,7 @@ main{
     border-radius: 5px;
     text-align: center;
 }
+<<<<<<< HEAD
 
 #btnSuperheroes{
     background-color: darkred;
@@ -75,3 +76,9 @@ main{
 #seccion-galeria{
     width: 100%;
 }
+=======
+.card:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s;
+  }
+>>>>>>> feature/formulario
