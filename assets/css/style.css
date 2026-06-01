@@ -71,3 +71,7 @@ main{
     color: white;
     width: fit-content;
 }
+
+#seccion-galeria{
+    width: 100%;
+}

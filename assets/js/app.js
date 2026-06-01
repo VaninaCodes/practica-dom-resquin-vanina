@@ -6,6 +6,7 @@ const personajes = [
   { id: 5, nombre: "Abraxas", imagen: "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/5-abraxas.jpg" },
 ];
 
+// Renderizado de cards
 const btnSuperheroes = document.querySelector("#btnSuperheroes")
 const rowGaleria = document.querySelector("#rowGaleria")
 
@@ -15,7 +16,7 @@ const cargarSuperheroes = (arregloSuperheroes) => {
     arregloSuperheroes.forEach(personaje => {
         rowGaleria.innerHTML += `
             <div class="col-3 my-2" data-id=${personaje.id}>
-          <div class="card">
+          <div class="card h-100 w-100">
             <img
               src=${personaje.imagen}
               class="card-img-top"
@@ -36,3 +37,23 @@ const cargarSuperheroes = (arregloSuperheroes) => {
 btnSuperheroes.addEventListener("click", () => {
     cargarSuperheroes(personajes)
 })
+
+// Filtro por nombre
+const inputBuscador = document.querySelector("#inputBuscador")
+const btnBuscador = document.querySelector("#btnBuscador")
+
+const buscar = (arregloSuperheroes) =>{
+    // obtiene lo que se escribe y convierte a minuscula
+    const texto = inputBuscador.value.toLocaleLowerCase();
+
+    const personajesFiltrados = arregloSuperheroes.filter(personaje => 
+        personaje.nombre.toLowerCase().includes(texto));
+        // verifica si el nombre tiene el texto buscado
+    cargarSuperheroes(personajesFiltrados)
+}
+
+// Evento para el boton
+btnBuscador.addEventListener("click", (e) => {
+    e.preventDefault(); // previene que la pagina se recargue
+    buscar(personajes);
+});
