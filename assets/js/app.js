@@ -25,14 +25,37 @@ const cargarSuperheroes = (arregloSuperheroes) => {
             />
             <div class="card-body">
               <h5 class="card-title">${personaje.nombre}</h5>
-              <button type="button" class="btn btn-danger btn-eliminar">Eliminar</button>
+              <button type="button" class="btn btn-danger btn-eliminar"  data-id="${personaje.id}" >Eliminar</button>
             </div>
           </div>
         </div>
         
         `
     });
-}
+
+    // Boton eliminar
+    const botonesEliminar = document.querySelectorAll(".btn-eliminar");
+
+    botonesEliminar.forEach((boton) => {
+        boton.addEventListener("click", () => {
+            // obtiene el valor del id
+            const id = Number(boton.dataset.id);
+            // Number porque dataset devuelve string
+
+            // nuevo arreglo sin el sh borrado
+            const personajesFiltrados = personajes.filter(
+                personaje => personaje.id !== id
+            );
+
+            // vacia el arreglo original
+            personajes.length = 0;
+            // agrega los elementos
+            personajes.push(...personajesFiltrados);
+
+            cargarSuperheroes(personajes);
+        });
+    });
+};
 
 btnSuperheroes.addEventListener("click", () => {
     cargarSuperheroes(personajes)
